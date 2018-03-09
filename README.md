@@ -129,3 +129,10 @@ render(){
 ```javascript
     { /*komentarz*/}
 ```
+
+5. CSS w React
+Można standardowo dodać używając <link rel> w pliku index.html
+Można również użyć "komponent style css" lub "inline css"  - polega to na tym, że css importowany jest bezpośrednio do komponentu i tylko używane są te, które dotyczą danego komponentu
+```javascript
+//w głównym pliku index.js
+import './css/style.css';
