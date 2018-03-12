@@ -139,6 +139,7 @@ Można również użyć "komponent style css" lub "inline css"  - polega to na t
 ```javascript
 //w głównym pliku index.js
 import './css/style.css';
+```
 
   LEKCJA 5 - OKŁAD APLIKACJI - KOMPONENT GŁÓWNY I KOMPONENTY W NIM OSADZONE
 -------------------------
