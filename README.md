@@ -161,5 +161,41 @@ Tworzymy nowy komponent Header.js w folderze components, exportujemy Header i mu
 import Header from "./Header";
 ```
 
-  LEKCJA 6 - PRZEKAZYWANIE DYNAMICZNYCH DANYCH W PROPS (ATRYBUTACH)
+  LEKCJA 6 - PROPS oraz $
+  PRZEKAZYWANIE DYNAMICZNYCH DANYCH W PROPS (ATRYBUTACH)
 -------------------------
+
+PROPS - są podobne do att HTML. W tagu przekazujemy dodatkowe informacje jak nazwa pliku lub nazwa alternatywna - bez których plik by się nie wyświetlił prawidłowo
+```html
+<img src="dog.jpg alt="Dog>
+<input type="text">
+```
+propsy = attr. Propsy to metoda jaką przekazujemy dane do komponentu.
+
+STATE - miejsce gdzie dane żyją w danej chwili
+PROPS - to metoda w jaki sposób dane docierają do domu
+
+PRZYKŁAD: chcemy aby nasz tytuł był przekazywany dynamicznie (komponent Header.js)
+```javascript
+<Header tagline="Wes is Cool" age={400} cool={true}>
+```
+Jak spojrzymy w devtools w React to w props wyświetli nam się Props: tagline: "Wes is cool" age=500 cool=true
+Możemy props traktować jako obiekt z właściwościami.
+
+Przekazywanie propsów w konkretne miejsce na stronie
+  1. musimy wywołać w React informację, że będziemy robić JS (czyli {} )
+  2. a następnie wywołujemy propsy wpisując do środka
+  ```javascript
+  //App.js//
+  <Header tagline="Wes is Cool"></header>
+  //Header.js//
+  <h3 className="tagline">
+    {this.props.tagline}
+  </h3>
+  ```
+  this <- czyli odwołanie to instancji komponentu, w tym wypadku chodzi o Header
+
+Czyli tam gdzie jest komponent decydujemy jakie info będzie wyświetlane.
+a tam gdzie jest on uruchamiany - przekazujemy informacje co będzie.
+
+$r - w devtools w chrome, zwraca cały komponent. moment AHA! cały zwrócony komponent to tak na serio - jeden obiekt!
