@@ -8,7 +8,7 @@ class App extends React.Component {
         return(
             <div className="catch-of-the-day">
                 <div className="menu">
-                    <Header /> {/* komponent do napisania */}
+                    <Header tagline="hej hej hej" /> {/* komponent do napisania */}
                 </div>
                 <Order /> {/* komponent do napisania */}
                 <Inventory /> {/* komponent do napisania */}
