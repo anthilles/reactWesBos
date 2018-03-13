@@ -165,15 +165,15 @@ import Header from "./Header";
   PRZEKAZYWANIE DYNAMICZNYCH DANYCH W PROPS (ATRYBUTACH)
 -------------------------
 
-PROPS - są podobne do att HTML. W tagu przekazujemy dodatkowe informacje jak nazwa pliku lub nazwa alternatywna - bez których plik by się nie wyświetlił prawidłowo
+**PROPS** - są podobne do att HTML. W tagu przekazujemy dodatkowe informacje jak nazwa pliku lub nazwa alternatywna - bez których plik by się nie wyświetlił prawidłowo
 ```html
 <img src="dog.jpg alt="Dog>
 <input type="text">
 ```
 propsy = attr. Propsy to metoda jaką przekazujemy dane do komponentu.
 
-STATE - miejsce gdzie dane żyją w danej chwili
-PROPS - to metoda w jaki sposób dane docierają do domu
+**STATE** - miejsce gdzie dane żyją w danej chwili
+**PROPS** - to metoda w jaki sposób dane docierają do domu
 
 PRZYKŁAD: chcemy aby nasz tytuł był przekazywany dynamicznie (komponent Header.js)
 ```javascript
@@ -193,9 +193,105 @@ Przekazywanie propsów w konkretne miejsce na stronie
     {this.props.tagline}
   </h3>
   ```
-  this <- czyli odwołanie to instancji komponentu, w tym wypadku chodzi o Header
+  **this** <- czyli odwołanie to instancji komponentu, w tym wypadku chodzi o Header
 
 Czyli tam gdzie jest komponent decydujemy jakie info będzie wyświetlane.
 a tam gdzie jest on uruchamiany - przekazujemy informacje co będzie.
 
-$r - w devtools w chrome, zwraca cały komponent. moment AHA! cały zwrócony komponent to tak na serio - jeden obiekt!
+**$r** - w devtools w chrome, zwraca cały komponent. moment AHA! cały zwrócony komponent to tak na serio - jeden obiekt!
+
+  LEKCJA 7 - state / stateless function
+-------------------------
+
+**stateless function component** - jeśli nasz komponent nie robi nic więcej tylko renderuje (i może mieć propsy) to nie ma potrzeby robienia z niego pełnoprawnego komponentu. Wtedy wystarczy nam
+zrobienie stateless function component
+
+komponent renderujący przed "poprawką"
+
+```javascript
+class Header extends React.Component{
+    render(){
+        return(
+            <header className="top">
+                <h1>
+                    Catch
+                    <span className="ofThe">
+                        <span className="of">Of</span>
+                        <span className="the">The</span>
+                    </span>
+                    Day
+                </h1>
+                <h3 className="tagline">
+                    <span>{this.props.tagline}</span>
+                </h3>
+            </header>
+        )
+    }
+}
+```
+
+ten sam tylko stateless function component
+
+```javascript
+  const Header = props => (
+                <header className="top">
+                <h1>
+                    Catch
+                    <span className="ofThe">
+                        <span className="of">Of</span>
+                        <span className="the">The</span>
+                    </span>
+                    Day
+                </h1>
+                <h3 className="tagline">
+                    <span>{props.tagline}</span>
+                </h3>
+            </header>
+  )
+```
+
+1. const Header = props => () // czyli funkcja Header która obiera jedną wartość "props" a następnie render - czyli ()
+2. Po co to? Oszczędza to nam kodu oraz "wydajność" naszej aplikacji
+
+
+  LEKCJA 8 - Routing / React router
+-------------------------
+**Router** - nie jest to technologia przypisana bezpośrednio do React'a.
+            W reacie wszystko jest komponentem, nawet Router jest komponentem.
+1. Dlatego w folderze components musimy utworzyć plik Router.js
+2. Następnie w nim musimy zaimportować kilka rzeczy:
+```javascript
+    import React from 'react';
+    import {BrowserRouter, Route, Switch } from 'react-router-dom';
+```
+3. Oraz stworzyć nasz stateless komponent, zwracający trochę bardziej rozbudowany return
+```javascript
+    const Router = () => (
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={StorePicker} />;
+          <Route exact path="/store/:storeId" component={App} />;
+          <Route exact component={NotFound} />;
+        </Switch>
+      </BrowserRouter>
+    );
+    export default Router;
+```
+**Route** - są to nasze przejścia, jeśli nie znajdzie takiego adresu przechodzi do kolejnego route i tak dalej
+**<Route exact path="/" component={StorePicker}>** - wskazujemy dokładna ścieżkę jaka ma zostać wpisana oraz komponent, który zostanie zwrócony. Należy pamiętać, że ten komponent musimy dodać do zaimportowania w Router.js!
+```javascript
+  import StorePicker from './StorePicker';
+  import App from './App';
+  import NotFound from './NotFound';
+```
+**<Route exact path="/store/:storeId" component={App} />;** - wszystkie adresy nazwastrony/store/cokolwiekcotusiewpisze wywołają komponent App
+
+**<Route exact component={NotFound} />;** - jeśli nie podamy path to będzie się to odnosić do wszystkich pozostałych wpisanych adresów
+
+4. Poprawki w index.js - skoro importujemy konkretne komponenty w Router.js to musimy zaimportować router do index.js oraz możemy wyrzucić również z index.js importowane komponenty używane w Router.js
+
+~~import StorePicker from './components/StorePicker'~~
+~~import App from './components/App'~~
+import Router from './components/Router"
+
+render(~~<App/>~~ <Router />, document.querySelector('#main'));
