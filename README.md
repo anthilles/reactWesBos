@@ -294,4 +294,4 @@ ten sam tylko stateless function component
 * ~~import App from './components/App'~~
 * import Router from './components/Router"
 
-render(~~<App/>~~ <Router />, document.querySelector('#main'));
+* render(<Router />, document.querySelector('#main'));
