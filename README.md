@@ -278,20 +278,20 @@ ten sam tylko stateless function component
     export default Router;
 ```
 **Route** - są to nasze przejścia, jeśli nie znajdzie takiego adresu przechodzi do kolejnego route i tak dalej
-**<Route exact path="/" component={StorePicker}>** - wskazujemy dokładna ścieżkę jaka ma zostać wpisana oraz komponent, który zostanie zwrócony. Należy pamiętać, że ten komponent musimy dodać do zaimportowania w Router.js!
+**Route exact path="/" component={StorePicker}** - wskazujemy dokładna ścieżkę jaka ma zostać wpisana oraz komponent, który zostanie zwrócony. Należy pamiętać, że ten komponent musimy dodać do zaimportowania w Router.js!
 ```javascript
   import StorePicker from './StorePicker';
   import App from './App';
   import NotFound from './NotFound';
 ```
-**<Route exact path="/store/:storeId" component={App} />;** - wszystkie adresy nazwastrony/store/cokolwiekcotusiewpisze wywołają komponent App
+**Route exact path="/store/:storeId" component={App}** - wszystkie adresy nazwastrony/store/cokolwiekcotusiewpisze wywołają komponent App
 
-**<Route exact component={NotFound} />;** - jeśli nie podamy path to będzie się to odnosić do wszystkich pozostałych wpisanych adresów
+**Route exact component={NotFound}** - jeśli nie podamy path to będzie się to odnosić do wszystkich pozostałych wpisanych adresów
 
 4. Poprawki w index.js - skoro importujemy konkretne komponenty w Router.js to musimy zaimportować router do index.js oraz możemy wyrzucić również z index.js importowane komponenty używane w Router.js
 
-~~import StorePicker from './components/StorePicker'~~
-~~import App from './components/App'~~
-import Router from './components/Router"
+* ~~import StorePicker from './components/StorePicker'~~
+* ~~import App from './components/App'~~
+* import Router from './components/Router"
 
 render(~~<App/>~~ <Router />, document.querySelector('#main'));
