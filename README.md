@@ -295,3 +295,36 @@ ten sam tylko stateless function component
 * import Router from './components/Router"
 
 * render(<Router />, document.querySelector('#main'));
+
+  LEKCJA 7 - state / stateless function
+-------------------------
+
+**helpers.js** - czyli plik w którym przechowujemy wszystkie regularne javascriptowe funkcje, dla których nie ma potrzeby budowania specyficznych komponentów.
+Jedną z ważniejszych rzeczy jest wyeksportowanie tych funkcji z pliku helpers.js. W tym celu użyjemy:
+
+```javascript
+  export function nazwa(){
+    return cos;
+  }
+```
+
+**różnica pomiędzy export default a export**
+```javascript
+  import React from "react";
+```
+właśnie słowo React to "default". Importujemy cały pakiet React
+
+```javascript
+  import { nazwa } from '../helpers';
+```
+a tak wygląda importowanie konkretnej funkcji { nazwa } z pakietu helpers.
+Gdybyśmy chcieli zaimportować całość to by było default bez { }
+
+**wykorzystanie zaimportowanej funkcji**
+
+Ok to mamy już zaimportowaną, a jak jej użyć?
+```javascript
+  <input type="text" defaultValue={nazwa()}/>
+```
+1. defaultValue - musimy użyć takiej składni. Wiąże się to ze stanem aplikacji
+2. w {} bo "robimy tu javascript"
