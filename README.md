@@ -329,3 +329,75 @@ Ok to mamy już zaimportowaną, a jak jej użyć?
 ```
 1. defaultValue - musimy użyć takiej składni. Wiąże się to ze stanem aplikacji
 2. w {} bo "robimy tu javascript"
+
+LEKCJA 10 - Events, Refs, Bindings
+----------------------------------------------
+
+**events**
+1. w React jest bardzo podobnie do czytego js. Jedynym "dodatkiem jest SyntheticEvent - co jest instancją cross-browser, czyli że będzie działać wszędzie.
+2. W React eventy obsługiwane są w jednej linii - więc nie trzeba bawić się w clasę w html, która uruchamiana jest w oddzielnym pliku js. Wystarczy onClick + oczywiście zadeklarowanie funkcji (w przykładzie - ten sam plik, powyżej render)
+
+```javascript
+
+class StorePicker extends React.Component {
+  handleClick() {
+    alert("kliknięto")
+  }
+  render(){
+    return (
+      <button onClick={this.handleClick}>click me!</button>
+    )
+  }
+}
+
+```
+**Refs**
+3. Samo pobieranie elementów - jedna z ważniejszych zasad React brzmi - nie dotykaj DOM. Co oznacza mniej więcej, że to co zostało już dodane niech nie będzie ruszane (???)
+Można wykorzystać do tego **refs** - które pozwalają nam na sięgnięcie do elementów już zbudowanych na stronie
+
+```javascript
+  myInput = React.createRef(); //tworzymy pusty myInput
+
+  render(){
+    return (
+      <input
+        type="text"
+        ref="this.myInput" //this.myInput - ref przekazujący input do myInput, zamieniając input w komponent
+        defaultValue="test"
+      />
+    )
+  }
+```
+
+**binding**
+Wszystkie komponenty budowane w React należą z automatu do React.Component (Rodzic)
+Rodzi ot problemy jesli chcemy odwołać się do własnego komponentu - i używając "this" mamy problem. Zwraca info z komponentu rodzica albo undefined
+Rozwiązaniem jest zbindowanie naszego własnego komponentu.
+
+```javascript
+  constructor() {
+    super(); //a super musi być aby i tak uruchomić React przed użyciem konstruktora.
+  }
+```
+konstruktor to metoda, która uruchomi się jeszcze przed głównym komponentem, mimo tego, że sam jest wewnątrz.
+A że jest wewnątrz to trzeba i tak uruchomić React przed uruchomieniem konstruktora - tutaj przychodzi nam z pomocą super();
+I w konstruktorze możemy zbindować this na własną metodę
+
+```javascript
+  constructor() {
+    super();
+    this.goToStore = this.goToStore.bind(this);
+  }
+```
+
+**ALE** można to załatwić w łatwiejszy sposób. Zamiast deklarować metodę na komponencie deklarujemy properie, która będzie ustawiona na arrow function
+```javascript
+  goToStore = (event) => {
+    console.log(this);
+  }
+```
+
+**więc jeśli potrzebujemy dostępu this wewnątrz własnej metody musimy użyć (event) => {} albo bawić się konstruktorem**
+
+LEKCJA 11 - Obsługa eventów
+----------------------------------------------
