@@ -1,3 +1,18 @@
+SPIS TREŚCI
+-------------------------
+1. [Lekcja 1 i 2](https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-2)
+3. KOMPONENT https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-3---komponent
+4. JSX https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-4---jsx
+5. CSS w REACT https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-4---css-w-react
+6. UKŁAD APLIKACJI - KOMPONENT GŁÓWNY I KOMPONENTY W NIM OSADZONE https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-5---ok%C5%81ad-aplikacji---komponent-g%C5%81%C3%93wny-i-komponenty-w-nim-osadzone
+7. PROPS oraz $ PRZEKAZYWANIE DYNAMICZNYCH DANYCH W PROPS (ATRYBUTACH) https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-6---props-oraz-przekazywanie-dynamicznych-danych-w-props-atrybutach
+8. state / stateless function https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-7---state--stateless-function
+9. Routing / React router https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-8---routing--react-router
+10. Funkcje w helpers.js i ich import https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-9---funkcje-w-helpersjs-i-ich-import
+11. Events, Refs, Bindings https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-10---events-refs-bindings
+12. Obsługa eventów https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-11---obs%C5%82uga-event%C3%B3w
+
+
 Stack soft
 -------------------------
 * Node
@@ -132,7 +147,7 @@ render(){
 ```
 
 
-  LEKCJA 4 - CSS w REACT
+  LEKCJA 5 - CSS w REACT
 -------------------------
 Można standardowo dodać używając <link rel> w pliku index.html
 Można również użyć "komponent style css" lub "inline css"  - polega to na tym, że css importowany jest bezpośrednio do komponentu i tylko używane są te, które dotyczą danego komponentu
@@ -141,7 +156,7 @@ Można również użyć "komponent style css" lub "inline css"  - polega to na t
 import './css/style.css';
 ```
 
-  LEKCJA 5 - OKŁAD APLIKACJI - KOMPONENT GŁÓWNY I KOMPONENTY W NIM OSADZONE
+  LEKCJA 6 - UKŁAD APLIKACJI - KOMPONENT GŁÓWNY I KOMPONENTY W NIM OSADZONE
 -------------------------
 [App.js w folderze components] APP COMPONENT - komponent trzymający wszystkie pozostałe komponenty w sobie, w oparciu o relację parent - child.
 Dzięki temu przekazywanie danych pomiędzy komponentami jest ułatwione - odbywa się właśnie przez appkomponent
@@ -161,7 +176,7 @@ Tworzymy nowy komponent Header.js w folderze components, exportujemy Header i mu
 import Header from "./Header";
 ```
 
-  LEKCJA 6 - PROPS oraz $
+  LEKCJA 7 - PROPS oraz $
   PRZEKAZYWANIE DYNAMICZNYCH DANYCH W PROPS (ATRYBUTACH)
 -------------------------
 
@@ -200,7 +215,7 @@ a tam gdzie jest on uruchamiany - przekazujemy informacje co będzie.
 
 **$r** - w devtools w chrome, zwraca cały komponent. moment AHA! cały zwrócony komponent to tak na serio - jeden obiekt!
 
-  LEKCJA 7 - state / stateless function
+  LEKCJA 8 - state / stateless function
 -------------------------
 
 **stateless function component** - jeśli nasz komponent nie robi nic więcej tylko renderuje (i może mieć propsy) to nie ma potrzeby robienia z niego pełnoprawnego komponentu. Wtedy wystarczy nam
@@ -254,7 +269,7 @@ ten sam tylko stateless function component
 2. Po co to? Oszczędza to nam kodu oraz "wydajność" naszej aplikacji
 
 
-  LEKCJA 8 - Routing / React router
+  LEKCJA 9 - Routing / React router
 -------------------------
 **Router** - nie jest to technologia przypisana bezpośrednio do React'a.
             W reacie wszystko jest komponentem, nawet Router jest komponentem.
@@ -297,7 +312,7 @@ ten sam tylko stateless function component
 * render(<Router />, document.querySelector('#main'));
 
 
-LEKCJA 9 - Funkcje w helpers.js i ich import
+LEKCJA 10 - Funkcje w helpers.js i ich import
 ----------------------------------------------
 
 **helpers.js** - czyli plik w którym przechowujemy wszystkie regularne javascriptowe funkcje, dla których nie ma potrzeby budowania specyficznych komponentów.
@@ -330,7 +345,7 @@ Ok to mamy już zaimportowaną, a jak jej użyć?
 1. defaultValue - musimy użyć takiej składni. Wiąże się to ze stanem aplikacji
 2. w {} bo "robimy tu javascript"
 
-LEKCJA 10 - Events, Refs, Bindings
+LEKCJA 11 - Events, Refs, Bindings
 ----------------------------------------------
 
 **events**
@@ -399,5 +414,5 @@ I w konstruktorze możemy zbindować this na własną metodę
 
 **więc jeśli potrzebujemy dostępu this wewnątrz własnej metody musimy użyć (event) => {} albo bawić się konstruktorem**
 
-LEKCJA 11 - Obsługa eventów
+LEKCJA 12 - Obsługa eventów
 ----------------------------------------------
