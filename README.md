@@ -296,6 +296,7 @@ ten sam tylko stateless function component
 
 * render(<Router />, document.querySelector('#main'));
 
+
   LEKCJA 7 - state / stateless function
 -------------------------
 
