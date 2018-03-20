@@ -297,8 +297,8 @@ ten sam tylko stateless function component
 * render(<Router />, document.querySelector('#main'));
 
 
-LEKCJA 7 - state / stateless function
--------------------------
+LEKCJA 9 - Funkcje w helpers.js i ich import
+----------------------------------------------
 
 **helpers.js** - czyli plik w którym przechowujemy wszystkie regularne javascriptowe funkcje, dla których nie ma potrzeby budowania specyficznych komponentów.
 Jedną z ważniejszych rzeczy jest wyeksportowanie tych funkcji z pliku helpers.js. W tym celu użyjemy:
