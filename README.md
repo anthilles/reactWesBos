@@ -1,16 +1,16 @@
 SPIS TREŚCI
 -------------------------
 1. [Lekcja 1 i 2](https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-2)
-3. KOMPONENT https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-3---komponent
-4. JSX https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-4---jsx
-5. CSS w REACT https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-4---css-w-react
-6. UKŁAD APLIKACJI - KOMPONENT GŁÓWNY I KOMPONENTY W NIM OSADZONE https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-5---ok%C5%81ad-aplikacji---komponent-g%C5%81%C3%93wny-i-komponenty-w-nim-osadzone
-7. PROPS oraz $ PRZEKAZYWANIE DYNAMICZNYCH DANYCH W PROPS (ATRYBUTACH) https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-6---props-oraz-przekazywanie-dynamicznych-danych-w-props-atrybutach
-8. state / stateless function https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-7---state--stateless-function
-9. Routing / React router https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-8---routing--react-router
-10. Funkcje w helpers.js i ich import https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-9---funkcje-w-helpersjs-i-ich-import
-11. Events, Refs, Bindings https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-10---events-refs-bindings
-12. Obsługa eventów https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-11---obs%C5%82uga-event%C3%B3w
+3. [KOMPONENT](https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-3---komponent)
+4. [JSX](https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-4---jsx)
+5. [CSS w REACT](https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-4---css-w-react)
+6. [UKŁAD APLIKACJI - KOMPONENT GŁÓWNY I KOMPONENTY W NIM OSADZONE](https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-5---ok%C5%81ad-aplikacji---komponent-g%C5%81%C3%93wny-i-komponenty-w-nim-osadzone)
+7. [PROPS oraz $ PRZEKAZYWANIE DYNAMICZNYCH DANYCH W PROPS (ATRYBUTACH)](https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-6---props-oraz-przekazywanie-dynamicznych-danych-w-props-atrybutach)
+8. [state / stateless function](https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-7---state--stateless-function)
+9. [Routing / React router](https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-8---routing--react-router)
+10. [Funkcje w helpers.js i ich import](https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-9---funkcje-w-helpersjs-i-ich-import)
+11. [Events, Refs, Bindings](https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-10---events-refs-bindings)
+12. [Obsługa eventów](https://github.com/anthilles/reactWesBos/blob/master/README.md#lekcja-11---obs%C5%82uga-event%C3%B3w)
 
 
 Stack soft
